@@ -1,0 +1,40 @@
+.directory{
+    width: 100%;
+    .wrap{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+    .shop_img{
+        position: relative;
+        width:100%;
+        min-height:80vh;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin: 2% auto;
+        justify-content: flex-end;
+        height: auto;
+      .heading_div{
+            width:80%;
+            height:80vh;
+            position: relative;
+            background:linear-gradient(90deg,transparent,rgba(255, 255, 255,1.2));
+            margin-left: 20%;
+            .heading_wrap{
+                width: 50%;
+                text-align: right;
+                position: absolute;
+                top: 15%;
+                right: 20%;
+                .heading{
+                    font-family: 'Signika', sans-serif;
+                    font-size: 8rem;
+                    padding: 30px;
+    
+              }
+        }
+         
+      }
+    }
+    }
+}
