@@ -21,5 +21,23 @@
 
           }
       }
+      .list_links{
+          position: absolute;
+          right:8.5%;
+          top: 50%;
+          -webkit-transform: translateY(-50%);
+          -moz-transform: translateY(-50%);
+          transform:translateY(-50%);
+          ul, li {
+              list-style-type: none;
+              display: inline-flex;
+              margin:0 1.5rem;
+              .register , .login{
+                  text-transform: uppercase;
+                  color:#22577A;
+
+              }
+          }
+      }
   }
 }
