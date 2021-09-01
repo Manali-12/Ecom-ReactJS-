@@ -1,0 +1,28 @@
+.sign-in{
+    width: 35%;
+    height: 60vh;
+    text-align: center;
+    border: 3px solid #FDD2BF;
+    border-radius: 5px;
+    .sign-wrap{
+        height: 47vh;
+        padding: 5%;
+        background-color: white;
+        margin: 2%;
+        border-radius: 5px;
+        .button-pink{
+            background: linear-gradient(30deg,#FF96AD,#FFBD9B);
+            font-size: 3rem;
+            text-align: center;
+            color:white;
+            border: 0;
+            outline: 0;
+            padding: 2% 6%;
+            margin: 0;
+            border-radius: 10px;
+            z-index: 100000;
+            pointer-events: visible;
+            cursor: pointer;
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.login-layout{
+position: relative;
+.login-wrap{
+height:80vh;
+width:100vw;
+display: flex;
+flex-direction: row;
+overflow: hidden;
+.side-1, .side-2{
+    width: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+}
+.sign-in{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+}
