@@ -2,7 +2,6 @@ import React from 'react';
 import "../Directory/Directory.scss"
 import poster from "../../images/poster6.png"
 import sposter from "../../images/sideposter5.png";
-import Button from '../Items/Buttons/Button';
 
 
 export default function Directory() {
@@ -28,9 +27,7 @@ export default function Directory() {
                             Enjoy shopping with the
                             fashion experts!
                         </div>
-                        <div className="buttons">
-                            <Button>Explore</Button>
-                        </div>
+                        <button className="button-blue" onClick={() => console.log("clicked")}>Explore</button>
                     </div>
                 </div>
 

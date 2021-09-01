@@ -14,7 +14,7 @@
         margin: 2% auto;
         height: auto;
         float: left;
-      
+        z-index: 1;
     }
     .heading_div{
         width:80%;
@@ -22,19 +22,34 @@
         position: relative;
         background:linear-gradient(90deg,transparent,rgba(255, 255, 255,1.2));
         margin-left: -5%;
-        z-index: -1;
+        float: right;
         .heading_wrap{
             width: 65%;
             text-align: right;
             position: absolute;
             top: 15%;
             right: 20%;
+            
             .heading{
                 font-family: 'Signika', sans-serif;
                 font-size: 10rem;
                 padding: 20px;
 
           }
+          .button-blue{
+            background-color: #3DB2FF;
+            font-size: 3rem;
+            text-align: center;
+            color:white;
+            border: 0;
+            outline: 0;
+            padding: 2% 6%;
+            margin: 0;
+            border-radius: 10px;
+            z-index: 100000;
+            pointer-events: visible;
+            cursor: pointer;
+        }
     }
      
   }
