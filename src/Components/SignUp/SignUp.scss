@@ -1,13 +1,14 @@
-.sign-in{
-    width: 35%;
+.sign_up{
+    width: 100%;
     text-align: center;
     border: 3px solid #FDD2BF;
     border-radius: 5px;
-    .signin-wrap{
+    .signup-wrap{
         padding: 5%;
         background-color: white;
         margin: 2%;
         border-radius: 5px;
+        
         h2 , h3{
             font-family: 'Source Sans Pro', sans-serif;
             color: #444941;
@@ -39,6 +40,9 @@
             pointer-events: visible;
             cursor: pointer;
             width: 100%;
+            // '& :hover'{
+
+            // }
         }
         .Gbutton{
             width:85%;

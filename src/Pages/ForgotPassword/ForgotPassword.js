@@ -1,14 +1,14 @@
 import React from 'react'
-import "../Registration/Registration.scss"
-import SignUp from '../../Components/SignUp/SignUp'
+import "../ForgotPassword/ForgotPassword.scss"
 import side1 from "../../images/Lback6.png"
 import side2 from "../../images/Lback4.png"
+import ResetPassword from '../../Components/ResetPassword/ResetPassword';
 
 
-export default function Registration() {
+export default function ForgotPassword() {
     return (
-        <div className="registration-layout">
-            <div className="registration-wrap">
+        <div className="FP-layout">
+            <div className="FP-wrap">
                 <div className="side-1"
                     style={{
                         backgroundImage: `url(${side1})`
@@ -20,7 +20,8 @@ export default function Registration() {
                     }}>
                 </div>
             </div>
-            <div className="sign-up"><SignUp /></div>
+            <div className="reset-password"><ResetPassword /></div>
+
         </div>
     )
 }

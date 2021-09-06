@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { auth, handleUserProfile } from "./Firebase/utilities"
 import { onAuthStateChanged } from "firebase/auth";
 import { onSnapshot } from "@firebase/firestore";
+import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
 
 
 function App() {
@@ -40,6 +41,8 @@ function App() {
           <Route path="/" exact ><Homepage user={user} /></Route>
           <Route path="/registration" ><Registration user={user} /></Route>
           <Route path="/login" render={() => user.currentUser ? <Redirect to="/" /> : <Login user={user} />} />
+          <Route path="/forgotpassword" render={() => <ForgotPassword />} />
+
         </Switch>
       </div>
       <Footer />

@@ -22,13 +22,14 @@ export default function Directory() {
                         backgroundImage: `url(${sposter})`
                     }
                 }>
-                    <div className="heading_wrap">
-                        <div className="heading">
-                            Enjoy shopping with the
-                            fashion experts!
-                        </div>
-                        <button className="button-blue" onClick={() => console.log("clicked")}>Explore</button>
+
+                </div>
+                <div className="heading_wrap">
+                    <div className="heading">
+                        Enjoy shopping with the
+                        fashion experts!
                     </div>
+                    <button className="button-blue" onClick={() => console.log("clicked")}>Explore</button>
                 </div>
 
             </div>

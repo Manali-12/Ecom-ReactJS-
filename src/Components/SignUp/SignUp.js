@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import "./SignIn.scss";
-import { signInWithGoogle, auth } from '../../Firebase/utilities';
-import { makeStyles, TextField } from '@material-ui/core';
-import { signInWithEmailAndPassword } from '@firebase/auth';
-import { Link } from 'react-router-dom';
+import "../SignUp/SignUp.scss"
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+
+
 
 const useStyles = makeStyles({
     formLabels: {
@@ -22,36 +22,47 @@ const useStyles = makeStyles({
 
 })
 
-export default function SignIn() {
-    const classes = useStyles();
+export default function SignUp() {
 
     const [details, setdetails] = useState({});
+    const [displayName, setdisplayName] = useState("");
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
+    const [confirmPassword, setconfirmPassword] = useState("");
 
     function handleClick(e) {
+        e.preventDefault();
         setdetails(
             {
+                "displayName": displayName,
                 "email": email,
                 "password": password,
+                "confirmPassword": confirmPassword
             }
         );
-        console.log(email, password)
-        signInWithEmailAndPassword(auth, email, password);
-
     };
 
 
+    const classes = useStyles();
     return (
-        <div className="sign_in">
-            <div className="signin-wrap">
-                <h2>Login</h2>
+        <div className="sign_up">
+            <div className="signup-wrap">
+                <h2>Sign Up</h2>
                 <div className="form-div">
-                    <form className="form"
-                        onSubmit={(e) => {
-                            e.preventDefault();
-                            handleClick(e);
-                        }}>
+                    <form className="form" onSubmit={(e) => {
+                        handleClick(e);
+                        console.log(details);
+                    }}>
+                        <TextField
+                            className={classes.formLabels}
+                            color="secondary"
+                            label="Name"
+                            name="displayName"
+                            value={displayName}
+                            onChange={(e) => {
+                                setdisplayName(e.target.value);
+                            }
+                            } />
                         <TextField
                             className={classes.formLabels}
                             color="secondary"
@@ -61,7 +72,6 @@ export default function SignIn() {
                             value={email}
                             onChange={(e) => {
                                 setemail(e.target.value);
-                                console.log(email)
                             }} />
                         <TextField
                             className={classes.formLabels}
@@ -74,26 +84,33 @@ export default function SignIn() {
                                 setpassword(e.target.value);
                             }
                             } />
+                        <TextField
+                            className={classes.formLabels}
+                            color="secondary"
+                            label="Confirm password"
+                            type="password"
+                            name="confirmPassword"
+                            value={confirmPassword}
+                            onChange={(e) => {
+                                setconfirmPassword(e.target.value);
+                            }
+                            } />
                         <button
                             className="button-pink"
                         >
-                            Sign In
+                            Sign Up
                         </button>
-                    </form></div>
-
+                    </form>
+                </div>
+                <h3>OR</h3>
                 <button
-                    onClick={(e) => {
-                        e.preventDefault();
-                        console.log("pressed");
-                        return signInWithGoogle();
-                    }}
-                    className="button-pink Gbutton">
-                    Sign in with Google
-                </button>
-                <Link to="/forgotpassword"><h3>Forgot Password</h3></Link>
 
+                    className="button-pink Gbutton">
+                    Sign up with Google
+                </button>
             </div>
         </div>
-
     )
 }
+
+

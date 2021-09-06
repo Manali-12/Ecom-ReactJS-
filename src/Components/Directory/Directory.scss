@@ -5,8 +5,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-    .shop_img{
         position: relative;
+    .shop_img{
         width:40%;
         min-height:100vh;
         background-repeat: no-repeat;
@@ -14,44 +14,45 @@
         margin: 2% auto;
         height: auto;
         float: left;
-        z-index: 1;
+        z-index: 0;
     }
     .heading_div{
         width:80%;
-        height:100vh;
-        position: relative;
+        height:100vh; 
         background:linear-gradient(90deg,transparent,rgba(255, 255, 255,1.2));
         margin-left: -5%;
         float: right;
-        .heading_wrap{
-            width: 65%;
-            text-align: right;
-            position: absolute;
-            top: 15%;
-            right: 20%;
-            
-            .heading{
-                font-family: 'Signika', sans-serif;
-                font-size: 10rem;
-                padding: 20px;
-
-          }
-          .button-blue{
-            background-color: #3DB2FF;
-            font-size: 3rem;
-            text-align: center;
-            color:white;
-            border: 0;
-            outline: 0;
-            padding: 2% 6%;
-            margin: 0;
-            border-radius: 10px;
-            z-index: 100000;
-            pointer-events: visible;
-            cursor: pointer;
-        }
+        z-index: -1;
     }
-     
+  .heading_wrap{
+    position: absolute;
+    width: 45%;
+    text-align: right;
+    position: absolute;
+    top: 12%;
+    right: 14%;
+    
+    .heading{
+        font-family: 'Signika', sans-serif;
+        font-size: 10rem;
+        padding: 20px;
+        line-height: 1.2;
+
   }
+  .button-blue{
+    background-color: #3DB2FF;
+    font-size: 3rem;
+    text-align: center;
+    color:white;
+    border: 0;
+    outline: 0;
+    padding: 2% 10%;
+    margin: 2%;
+    border-radius: 10px;
+    z-index: 100000;
+    pointer-events: visible;
+    cursor: pointer;
+}
+}
     }
 }
