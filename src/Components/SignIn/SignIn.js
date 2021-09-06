@@ -6,7 +6,7 @@ export default function SignIn() {
 
     return (
         <div className="sign_in">
-            <div className="sign-wrap">
+            <div className="signin-wrap">
                 <h2>Login</h2>
                 <button
                     onClick={(e) => {

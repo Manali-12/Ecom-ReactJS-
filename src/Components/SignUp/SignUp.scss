@@ -1,0 +1,51 @@
+.sign_up{
+    width: 100%;
+    text-align: center;
+    border: 3px solid #FDD2BF;
+    border-radius: 5px;
+    .signup-wrap{
+        padding: 5%;
+        background-color: white;
+        margin: 2%;
+        border-radius: 5px;
+        
+        h2 , h3{
+            font-family: 'Source Sans Pro', sans-serif;
+            color: grey;
+            font-size: 4rem;
+            margin: 0 0 2%;
+        }
+        h3{
+            font-size: 2rem;
+            margin: 3% 0 1% 0;
+        }
+        .form-div{
+            .form{
+                display: flex;
+                flex-direction: column;
+                padding: 2% 7% 0;
+            }
+        }
+        .button-pink{
+            background: linear-gradient(30deg,#FF96AD,#FFBD9B);
+            font-size: 2rem;
+            text-align: center;
+            color:white;
+            border: 0;
+            outline: 0;
+            padding: 2% 16%;
+            margin: 3% 0 0;
+            border-radius: 10px;
+            z-index: 100000;
+            pointer-events: visible;
+            cursor: pointer;
+            width: 100%;
+            // '& :hover'{
+
+            // }
+        }
+        .Gbutton{
+            width:85%;
+        }
+    }
+}
