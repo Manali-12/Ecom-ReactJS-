@@ -10,37 +10,34 @@ import { auth, handleUserProfile } from "./Firebase/utilities"
 import { onAuthStateChanged } from "firebase/auth";
 import { onSnapshot } from "@firebase/firestore";
 import ForgotPassword from "./Pages/ForgotPassword/ForgotPassword";
+import { setCurrentUser } from "./Redux/Action/Action";
+import { connect } from "react-redux";
 
 
-function App() {
-
-  const initialState = {
-    currentUser: null,
-  };
-  const [user, setuser] = useState({ ...initialState });
+function App(props) {
   useEffect(() => {
     onAuthStateChanged(auth, async provider => {
       if (provider !== null) {
         await handleUserProfile(provider)
         console.log("loggedin!");
         provider.getIdTokenResult().then((token) => {
-          setuser({ currentUser: token });
+          setCurrentUser({ currentUser: token });
         })
       }
     })
 
   }, []);
-  console.log(user);
 
-
+  const { currentUser } = props;
   return (
+
     <div className="app">
-      <Header user={user} setuser={setuser} />
+      <Header />
       <div className="page_view">
         <Switch>
-          <Route path="/" exact ><Homepage user={user} /></Route>
-          <Route path="/registration" ><Registration user={user} /></Route>
-          <Route path="/login" render={() => user.currentUser ? <Redirect to="/" /> : <Login user={user} />} />
+          <Route path="/" exact ><Homepage /></Route>
+          <Route path="/registration" ><Registration /></Route>
+          <Route path="/login" render={() => currentUser ? <Redirect to="/" /> : <Login />} />
           <Route path="/forgotpassword" render={() => <ForgotPassword />} />
 
         </Switch>
@@ -49,5 +46,12 @@ function App() {
     </div>
   );
 }
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser
+});
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => setCurrentUser(user)
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

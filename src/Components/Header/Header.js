@@ -3,11 +3,13 @@ import "./style.scss";
 import Logo from "./../../images/logo.png"
 import { Link } from 'react-router-dom';
 import { auth } from "../../Firebase/utilities"
+import { connect } from "react-redux";
+import { setCurrentUser } from '../../Redux/Action/Action';
 
-export default function Header(props) {
-    const { user, setuser } = props;
-    let currentUser = user.currentUser;
-    console.log(user)
+
+function Header(props) {
+    const { currentUser } = props;
+    console.log(props)
     return (
         <div className="header">
             <div className="wrap">
@@ -22,7 +24,7 @@ export default function Header(props) {
                             <li>
                                 <span onClick={() => {
                                     auth.signOut();
-                                    setuser({ currentUser: null })
+                                    setCurrentUser({ currentUser: null })
 
                                 }}
                                     className="logout">
@@ -48,3 +50,7 @@ export default function Header(props) {
         </div>
     )
 }
+const mapStateToProps = ({ user }) => ({
+    currentUser: user.currentUser
+});
+export default connect(mapStateToProps, null)(Header);
