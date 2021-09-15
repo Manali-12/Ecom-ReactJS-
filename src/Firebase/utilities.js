@@ -18,13 +18,13 @@ const handleUserProfile = async (user, additionalData) => {
     const { uid, displayName, email } = user;
     const timestamp = new Date();
     const userRef = doc(db, "user/" + uid);
-    // const snap = await get(userRef);
 
     if (!userRef.exists) {
         try {
             setDoc(userRef, {
                 displayName,
                 email,
+
                 craetedDate: timestamp,
                 ...additionalData
             })

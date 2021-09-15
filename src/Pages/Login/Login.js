@@ -6,7 +6,6 @@ import side2 from "../../images/Lback4.png"
 
 
 export default function Login(props) {
-    console.log({ ...props.user })
     return (
         <div className="login-layout">
             <div className="login-wrap">

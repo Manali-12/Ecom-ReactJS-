@@ -84,7 +84,6 @@ export default function SignIn() {
                 <button
                     onClick={(e) => {
                         e.preventDefault();
-                        console.log("pressed");
                         return signInWithGoogle();
                     }}
                     className="button-pink Gbutton">

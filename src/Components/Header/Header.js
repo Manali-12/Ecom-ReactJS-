@@ -8,8 +8,9 @@ import { setCurrentUser } from '../../Redux/Action/Action';
 
 
 function Header(props) {
-    const { currentUser } = props;
-    console.log(props)
+    // const { setCurrentUser } = props;
+    let { currentUser } = props;
+    console.log(props, "Header");
     return (
         <div className="header">
             <div className="wrap">
@@ -24,8 +25,7 @@ function Header(props) {
                             <li>
                                 <span onClick={() => {
                                     auth.signOut();
-                                    setCurrentUser({ currentUser: null })
-
+                                    currentUser = null;
                                 }}
                                     className="logout">
                                     Logout</span>

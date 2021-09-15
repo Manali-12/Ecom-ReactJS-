@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import "../SignUp/SignUp.scss"
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-
+import { auth, handleUserProfile } from '../../Firebase/utilities';
+import { createUserWithEmailAndPassword } from "firebase/auth";
 
 
 const useStyles = makeStyles({
@@ -29,9 +30,23 @@ export default function SignUp() {
     const [email, setemail] = useState("");
     const [password, setpassword] = useState("");
     const [confirmPassword, setconfirmPassword] = useState("");
+    const [errors, setErrors] = useState([])
 
-    function handleClick(e) {
+    const reset = () => {
+        setemail("");
+        setpassword("");
+        setdisplayName("");
+        setconfirmPassword("");
+        setErrors("");
+    }
+
+    const handleClick = async e => {
         e.preventDefault();
+        if (password !== confirmPassword) {
+            const err = ["password dont match"];
+            setErrors(err);
+            return;
+        }
         setdetails(
             {
                 "displayName": displayName,
@@ -40,6 +55,15 @@ export default function SignUp() {
                 "confirmPassword": confirmPassword
             }
         );
+        try {
+            const user = await createUserWithEmailAndPassword(auth, setdetails);
+            await handleUserProfile(user, { displayName });
+            reset();
+
+        }
+        catch (err) {
+            // console.log(err);
+        }
     };
 
 
